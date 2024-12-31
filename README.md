@@ -20,6 +20,12 @@ The Calendar Application for Communication Tracking is a React-based tool design
 git clone https://github.com/Ankit389/Calendar-Application-for-Communication-Tracking.git
 ```
 
+### Install Dependencies
+
+```bash
+npm install
+```
+
 ### Run the Server
 
 ```bash
