@@ -1,146 +1,157 @@
-#  Calendar Application for Communication Tracking
+# Calendar Application for Communication Tracking
 
-## Objective
-As a company, we aim to maintain strong professional relationships by keeping accurate records of our interactions with other organizations. The objective of this assignment is to develop a React-based Calendar Application that enables us to efficiently track communication with companies, ensuring follow-ups are timely and consistent. This tool will provide a centralized platform to log past interactions, plan future communications, and manage the frequency of engagement based on predefined schedules.
+## Overview
 
-The application will include:
-- *An Admin Module* for setting up companies and communication parameters.
-- *A User Module* for visualizing, managing, and performing communication tasks.
-- *A Reporting and Analytics Module* for actionable insights (optional).
+The Calendar Application for Communication Tracking is a React-based tool designed to help companies maintain strong professional relationships by accurately recording interactions with other organizations. This application ensures timely and consistent follow-ups and provides a centralized platform for managing past and future communications efficiently.
 
-It is critical to emphasize usability, clarity, and efficient data handling.
+## Key Features
+
+- **Admin Module**: Setup and manage companies and communication parameters.
+- **User Module**: Visualize, manage, and perform communication tasks.
+- **Optional Reporting and Analytics Module**: Gain actionable insights into communication patterns.
 
 ---
 
-## Detailed Requirements
+## Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Ankit389/Calendar-Application-for-Communication-Tracking.git
+```
+
+### Run the Server
+
+```bash
+http://localhost:8080/reports
+```
+
+### Start the Application
+
+```bash
+npm run dev
+```
+
+### Live Deployment
+
+[Calendar Application on Vercel](https://calendar-application-for-communication-tracking-eight.vercel.app/admin)
+
+---
+
+## Objective
+
+This application aims to:
+
+- Log past interactions and plan future communications.
+- Manage engagement frequency based on predefined schedules.
+- Provide a centralized platform for communication tracking.
+
+---
+
+## Modules and Features
 
 ### Admin Module
-This module allows administrators to configure the application and manage its foundational data.
 
 #### Company Management
-Admins should be able to add, edit, and delete companies. Each company entry should include:
-- *Name*: Name of the company.
-- *Location*: Physical or operational location.
-- *LinkedIn Profile*: A link to the company’s LinkedIn page.
-- *Emails*: One or more email addresses for communication.
-- *Phone Numbers*: Contact numbers for representatives.
-- *Comments*: Notes or additional information about the company.
-- *Communication Periodicity*: The default time interval for scheduled communications (e.g., every 2 weeks).
+
+Admins can:
+
+- Add, edit, and delete companies with the following details:
+  - Name
+  - Location
+  - LinkedIn Profile
+  - Emails
+  - Phone Numbers
+  - Comments
+  - Communication Periodicity (e.g., every 2 weeks)
 
 #### Communication Method Management
-Admins should define the available communication methods in the system. Each method should include:
-- *Name*: E.g., "Visit" or "LinkedIn Post."
-- *Description*: E.g., "Visit to company premises."
-- *Sequence*: Determines the order of communication (e.g., LinkedIn Post → LinkedIn Message → Email → Phone Call → Other).
-- *Mandatory Flag*: Indicates whether a communication method is mandatory in the sequence.
 
-By default, the system should include these methods in the following order:
+Admins can define available communication methods, including:
+
+- Name (e.g., "Visit")
+- Description (e.g., "Visit to company premises")
+- Sequence (order of communication)
+- Mandatory Flag (indicates if the method is mandatory)
+
+_Default Communication Methods (in order):_
 1. LinkedIn Post
 2. LinkedIn Message
 3. Email
 4. Phone Call
 5. Other
 
----
-
 ### User Module
-This module is the primary interface for end-users, enabling them to view, manage, and perform communication tasks.
 
 #### Dashboard
-The dashboard provides a grid-like view where each row represents a company. Columns include:
-- *Company Name*: The name of the company.
-- *Last Five Communications*: A summary of the five most recent communications, including the type (e.g., "LinkedIn Post") and date (e.g., "5th September").
-- *Next Scheduled Communication*: The type and date of the next planned communication.
 
-*Color-Coded Highlights*:
-- *Red Highlight*: Indicates overdue communication.
-- *Yellow Highlight*: Indicates communication due today.
-- Users can disable or override highlights for specific companies or communications as needed.
+- **Grid View**: Displays each company with:
+  - Company Name
+  - Last Five Communications
+  - Next Scheduled Communication
+- **Color-Coded Highlights**:
+  - Red: Overdue communication
+  - Yellow: Communication due today
 
-*Interactive Features*:
-- *Hover Effect*: When hovering over a completed communication, a tooltip should display the notes or comments recorded for that communication.
+#### Interactive Features
 
-#### Communication Action
-- Users can select a specific company or multi-select multiple companies.
-- Click on a "Communication Performed" button to log a new communication:
-  - *Select Type of Communication*: E.g., LinkedIn Post, Email.
-  - *Input Date of Communication*: Date when the communication occurred.
-  - *Add Notes*: Additional comments about the communication.
-
-Upon submission, this action will reset any existing highlights (red or yellow) for the selected company/companies.
+- **Hover Effect**: Tooltip displays notes or comments for completed communications.
+- **Communication Action**:
+  - Select one or multiple companies.
+  - Log a new communication with type, date, and notes.
 
 #### Notifications
-A dedicated section displays overdue and due communications:
-- *Overdue Communications Grid*: Lists companies with overdue actions.
-- *Today’s Communications Grid*: Lists companies with tasks due today.
-- The notification icon should display a badge with the count of overdue and due communications.
+
+- Overdue Communications Grid
+- Today’s Communications Grid
+- Notification badge with overdue and due counts
 
 #### Calendar View
-A calendar interface that allows users to:
-- *View Past Communications*: Dates and methods of previous interactions.
-- *View and Manage Upcoming Communications*: Scheduled dates and methods for future interactions.
 
----
+- View past communications and manage upcoming interactions.
 
 ### Reporting and Analytics Module (Optional)
-This module provides actionable insights and performance metrics related to company communications.
 
-*Features*:
-- *Communication Frequency Report*:
-  - A visual representation (e.g., bar chart or pie chart) showing the frequency of each communication method (e.g., LinkedIn Post, Email) used over a selected time frame.
-  - Users can filter by company, date range, or communication method.
-- *Engagement Effectiveness Dashboard*:
-  - Track and display which communication methods are most effective in terms of response or follow-up actions.
-  - Include metrics like the percentage of successful responses to emails, phone calls, or LinkedIn messages.
-- *Overdue Communication Trends*:
-  - A trendline or heatmap showing the number of overdue communications over time, categorized by company.
-- *Downloadable Reports*:
-  - Allow users to export reports in PDF or CSV format for sharing or offline analysis.
-- *Real-Time Activity Log*:
-  - A live feed displaying all communication activities performed, sortable by date, user, or company.
+- **Communication Frequency Report**:
+  - Visual representation (bar chart, pie chart) of communication methods.
+  - Filters by company, date range, or method.
+- **Engagement Effectiveness Dashboard**:
+  - Track response rates by communication methods.
+- **Overdue Communication Trends**:
+  - Trendline or heatmap of overdue communications over time.
+- **Downloadable Reports**: Export data in PDF or CSV formats.
+- **Real-Time Activity Log**: Live feed of communication activities.
 
 ---
 
-## Development Setup
+## Application Architecture
 
-### Prerequisites
-- Node.js & npm (recommended: install via [nvm](https://github.com/nvm-sh/nvm)).
+### Technologies Used
 
-### Steps to Run Locally
-1. Clone the repository:
-   bash
-   git clone https://github.com/Ankit389/-Calendar-Application-for-Communication-Tracking-.git
-   
-2. Navigate to the project directory:
-   bash
-   cd Calendar-Application-for-Communication-Tracking
-   
-3. Install dependencies:
-   bash
-   npm install
-   
-4. Start the development server:
-   bash
-   npm run dev
-   
-5. Open the application at [http://localhost:8080/](http://localhost:8080/).
+- **Frontend**: React.js
+- **Backend**: Node.js
+- **Database**: MongoDB
+- **Deployment**: Vercel
 
 ---
 
+## Contribution Guidelines
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m "Add feature"`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
 
 ---
 
-## Contributing
+## License
 
-### Editing the Code
-You can edit this project in several ways:
-- *Use Your Preferred IDE*: Clone the repo and push changes from your local environment.
-- *Edit on GitHub*: Directly modify files through the GitHub interface and commit changes.
-- *Use GitHub Codespaces*: Launch a Codespace environment for an integrated editing experience.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
 
-## Feedback
-Feel free to open issues or submit pull requests for any improvements or suggestions.
+## Contact
 
----
+For further inquiries, please reach out to the repository owner.
+
