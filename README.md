@@ -1,69 +1,146 @@
-# Welcome to your Lovable project
+#  Calendar Application for Communication Tracking
 
-## Project info
+## Objective
+As a company, we aim to maintain strong professional relationships by keeping accurate records of our interactions with other organizations. The objective of this assignment is to develop a React-based Calendar Application that enables us to efficiently track communication with companies, ensuring follow-ups are timely and consistent. This tool will provide a centralized platform to log past interactions, plan future communications, and manage the frequency of engagement based on predefined schedules.
 
-**URL**: https://lovable.dev/projects/e467bd90-7a77-4bab-8b88-4ab9ff50c448
+The application will include:
+- *An Admin Module* for setting up companies and communication parameters.
+- *A User Module* for visualizing, managing, and performing communication tasks.
+- *A Reporting and Analytics Module* for actionable insights (optional).
 
-## How can I edit this code?
+It is critical to emphasize usability, clarity, and efficient data handling.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Detailed Requirements
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e467bd90-7a77-4bab-8b88-4ab9ff50c448) and start prompting.
+### Admin Module
+This module allows administrators to configure the application and manage its foundational data.
 
-Changes made via Lovable will be committed automatically to this repo.
+#### Company Management
+Admins should be able to add, edit, and delete companies. Each company entry should include:
+- *Name*: Name of the company.
+- *Location*: Physical or operational location.
+- *LinkedIn Profile*: A link to the company’s LinkedIn page.
+- *Emails*: One or more email addresses for communication.
+- *Phone Numbers*: Contact numbers for representatives.
+- *Comments*: Notes or additional information about the company.
+- *Communication Periodicity*: The default time interval for scheduled communications (e.g., every 2 weeks).
 
-**Use your preferred IDE**
+#### Communication Method Management
+Admins should define the available communication methods in the system. Each method should include:
+- *Name*: E.g., "Visit" or "LinkedIn Post."
+- *Description*: E.g., "Visit to company premises."
+- *Sequence*: Determines the order of communication (e.g., LinkedIn Post → LinkedIn Message → Email → Phone Call → Other).
+- *Mandatory Flag*: Indicates whether a communication method is mandatory in the sequence.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+By default, the system should include these methods in the following order:
+1. LinkedIn Post
+2. LinkedIn Message
+3. Email
+4. Phone Call
+5. Other
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+### User Module
+This module is the primary interface for end-users, enabling them to view, manage, and perform communication tasks.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+#### Dashboard
+The dashboard provides a grid-like view where each row represents a company. Columns include:
+- *Company Name*: The name of the company.
+- *Last Five Communications*: A summary of the five most recent communications, including the type (e.g., "LinkedIn Post") and date (e.g., "5th September").
+- *Next Scheduled Communication*: The type and date of the next planned communication.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+*Color-Coded Highlights*:
+- *Red Highlight*: Indicates overdue communication.
+- *Yellow Highlight*: Indicates communication due today.
+- Users can disable or override highlights for specific companies or communications as needed.
 
-# Step 3: Install the necessary dependencies.
-npm i
+*Interactive Features*:
+- *Hover Effect*: When hovering over a completed communication, a tooltip should display the notes or comments recorded for that communication.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+#### Communication Action
+- Users can select a specific company or multi-select multiple companies.
+- Click on a "Communication Performed" button to log a new communication:
+  - *Select Type of Communication*: E.g., LinkedIn Post, Email.
+  - *Input Date of Communication*: Date when the communication occurred.
+  - *Add Notes*: Additional comments about the communication.
 
-**Edit a file directly in GitHub**
+Upon submission, this action will reset any existing highlights (red or yellow) for the selected company/companies.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### Notifications
+A dedicated section displays overdue and due communications:
+- *Overdue Communications Grid*: Lists companies with overdue actions.
+- *Today’s Communications Grid*: Lists companies with tasks due today.
+- The notification icon should display a badge with the count of overdue and due communications.
 
-**Use GitHub Codespaces**
+#### Calendar View
+A calendar interface that allows users to:
+- *View Past Communications*: Dates and methods of previous interactions.
+- *View and Manage Upcoming Communications*: Scheduled dates and methods for future interactions.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+### Reporting and Analytics Module (Optional)
+This module provides actionable insights and performance metrics related to company communications.
 
-This project is built with .
+*Features*:
+- *Communication Frequency Report*:
+  - A visual representation (e.g., bar chart or pie chart) showing the frequency of each communication method (e.g., LinkedIn Post, Email) used over a selected time frame.
+  - Users can filter by company, date range, or communication method.
+- *Engagement Effectiveness Dashboard*:
+  - Track and display which communication methods are most effective in terms of response or follow-up actions.
+  - Include metrics like the percentage of successful responses to emails, phone calls, or LinkedIn messages.
+- *Overdue Communication Trends*:
+  - A trendline or heatmap showing the number of overdue communications over time, categorized by company.
+- *Downloadable Reports*:
+  - Allow users to export reports in PDF or CSV format for sharing or offline analysis.
+- *Real-Time Activity Log*:
+  - A live feed displaying all communication activities performed, sortable by date, user, or company.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## Development Setup
 
-Simply open [Lovable](https://lovable.dev/projects/e467bd90-7a77-4bab-8b88-4ab9ff50c448) and click on Share -> Publish.
+### Prerequisites
+- Node.js & npm (recommended: install via [nvm](https://github.com/nvm-sh/nvm)).
 
-## I want to use a custom domain - is that possible?
+### Steps to Run Locally
+1. Clone the repository:
+   bash
+   git clone https://github.com/Ankit389/-Calendar-Application-for-Communication-Tracking-.git
+   
+2. Navigate to the project directory:
+   bash
+   cd Calendar-Application-for-Communication-Tracking
+   
+3. Install dependencies:
+   bash
+   npm install
+   
+4. Start the development server:
+   bash
+   npm run dev
+   
+5. Open the application at [http://localhost:8080/](http://localhost:8080/).
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+
+---
+
+## Contributing
+
+### Editing the Code
+You can edit this project in several ways:
+- *Use Your Preferred IDE*: Clone the repo and push changes from your local environment.
+- *Edit on GitHub*: Directly modify files through the GitHub interface and commit changes.
+- *Use GitHub Codespaces*: Launch a Codespace environment for an integrated editing experience.
+
+---
+
+## Feedback
+Feel free to open issues or submit pull requests for any improvements or suggestions.
+
+---
